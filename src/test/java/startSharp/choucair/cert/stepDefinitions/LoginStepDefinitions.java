@@ -1,6 +1,7 @@
 package startSharp.choucair.cert.stepDefinitions;
 
 import io.cucumber.datatable.DataTable;
+import io.cucumber.java.AfterAll;
 import io.cucumber.java.Before;
 import io.cucumber.java.es.*;
 import net.serenitybdd.screenplay.GivenWhenThen;
@@ -23,12 +24,6 @@ public class LoginStepDefinitions {
     @Before
     public void initialConfigurationDektop() {
         OnStage.setTheStage(new OnlineCast());
-    }
-
-    @After
-    public void CloseDriver(){
-        SerenityWebdriverManager.inThisTestThread().clearCurrentActiveDriver();
-        SerenityWebdriverManager.inThisTestThread().closeCurrentDriver();
     }
 
     @Dado("que el usuario esta en la plataforma de StarSharp")
