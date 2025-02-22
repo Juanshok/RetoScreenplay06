@@ -7,6 +7,7 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.waits.Wait;
 import net.serenitybdd.screenplay.waits.WaitUntil;
+import org.openqa.selenium.Keys;
 import startSharp.choucair.cert.models.CreateBusinessUnitLombokData;
 
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
@@ -32,7 +33,7 @@ public class CreateBusinessUnit implements Task {
                 WaitUntil.the(TXT_NOMBRE, isVisible()).forNoMoreThan(20).seconds(), //Espera
                 Enter.theValue(createBusinessUnitLombokData.getNombre()).into(TXT_NOMBRE),
                 Click.on(LST_UNIDAD_PADRE),
-                Enter.theValue(createBusinessUnitLombokData.getUnidadPadre()).into(TXT_UNIDAD_PADRE),
+                Enter.theValue(createBusinessUnitLombokData.getUnidadPadre()).into(TXT_UNIDAD_PADRE).thenHit(Keys.ENTER),
                 Click.on(BTN_GUARDAR)
                 );
     }

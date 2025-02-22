@@ -60,5 +60,4 @@ test {
         systemProperty "cucumber.filter.tags", System.getProperty("cucumber.filter.tags")
     }
 }
-
 test.finalizedBy(aggregate)
